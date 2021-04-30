@@ -1,0 +1,9 @@
+guilded.py.egg-info/
+guilded.py_shay.egg-info/
+dist/
+build/
+docs/_build/
+guilded/__pycache__/
+testing/
+*.pyc
+*.log
