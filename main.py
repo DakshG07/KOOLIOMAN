@@ -1,7 +1,9 @@
 import guilded
 from guilded.ext import commands
+import keep_alive
 
 bot = commands.Bot(command_prefix='!', owner_id='R40y3pEd')
+warriors = ['jake', 'bob']
 
 @bot.event
 async def on_ready():
@@ -27,5 +29,15 @@ async def joined(ctx, member: guilded.Member):
     print(dir(member))
     await ctx.send('{0.name} joined in {0.joined_at}'.format(member))
 
+@bot.command()
+async def setxp(ctx, member: guilded.Member, xp: int):
+  try:
+    await member.edit(xp=xp)
+  except:
+    await ctx.send("There was an error. I may have insufficient role permissions. Please fix the issue and try again.")
+  else:
+    await ctx.send(f"Successfully set {member.name}'s XP to {xp}.")
+
 
 bot.run('xenigib207@quossum.com', 'KOOLIOMAN123')
+keep_alive.keep_alive()
