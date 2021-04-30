@@ -1,7 +1,7 @@
 import guilded
 from guilded.ext import commands
 
-bot = commands.Bot(command_prefix='!', owner_id='R40y3pEd')
+bot = commands.Bot(command_prefix='~', owner_id='R40y3pEd')
 warriors = ['jake', 'bob']
 
 @bot.event
@@ -28,6 +28,7 @@ async def joined(ctx, member: guilded.Member):
     print(dir(member))
     await ctx.send('{0.name} joined in {0.joined_at}'.format(member))
 
+#Guilded Only
 @bot.command()
 async def setxp(ctx, member: guilded.Member, xp: int):
   try:
