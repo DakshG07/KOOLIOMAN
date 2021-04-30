@@ -1,6 +1,5 @@
 import guilded
 from guilded.ext import commands
-import keep_alive
 
 bot = commands.Bot(command_prefix='!', owner_id='R40y3pEd')
 warriors = ['jake', 'bob']
@@ -40,4 +39,3 @@ async def setxp(ctx, member: guilded.Member, xp: int):
 
 
 bot.run('xenigib207@quossum.com', 'KOOLIOMAN123')
-keep_alive.keep_alive()
